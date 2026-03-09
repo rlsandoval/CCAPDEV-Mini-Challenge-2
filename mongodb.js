@@ -26,7 +26,7 @@ app.set('views', './views');
 // Replace the string below with your MongoDB Atlas connection string.
 // Atlas > Clusters > Connect > Drivers > Copy the connection string
 // It looks like: mongodb+srv://<username>:<password>@cluster0.xxxxx.mongodb.net/mini-challenge-2
-const MONGO_URI = 'YOUR_ATLAS_CONNECTION_STRING_HERE';
+const MONGO_URI = 'mongodb://roysandoval_db_user:sr1SzCUDehgPp85F@ac-acqluzs-shard-00-00.tbz0m6m.mongodb.net:27017,ac-acqluzs-shard-00-01.tbz0m6m.mongodb.net:27017,ac-acqluzs-shard-00-02.tbz0m6m.mongodb.net:27017/?ssl=true&replicaSet=atlas-slhgud-shard-0&authSource=admin&appName=Cluster0';
 
 mongoose.connect(MONGO_URI)
   .then(() => console.log('Connected to MongoDB Atlas'))
