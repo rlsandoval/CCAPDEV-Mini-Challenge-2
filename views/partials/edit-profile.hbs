@@ -1,0 +1,162 @@
+{{!-- Edit Profile Form --}}
+{{!-- TO DO: Pre-fill each input using Handlebars expressions, e.g. value="{{user.firstName}}" --}}
+{{!-- TO DO: Set the form action to point to the correct POST route --}}
+
+<div class="row justify-content-center">
+  <div class="col-md-8">
+
+    <div class="card shadow-sm">
+      <div class="card-header bg-primary text-white">
+        <h4 class="mb-0">Edit Profile</h4>
+        <small>@{{user.username}}</small>
+      </div>
+
+      <div class="card-body p-4">
+
+        {{#if success}}
+          <div class="alert alert-success">Profile updated successfully!</div>
+        {{/if}}
+
+        <form action="/edit-profile/{{user.username}}" method="POST">
+
+          {{!-- SECTION: Personal Information --}}
+          <h6 class="text-muted text-uppercase mb-3 mt-2">Personal Information</h6>
+
+          <div class="row mb-3">
+            <div class="col">
+              <label class="form-label">First Name</label>
+              <input
+                type="text"
+                name="firstName"
+                class="form-control"
+                value="{{user.firstName}}"
+                required
+              />
+            </div>
+            <div class="col">
+              <label class="form-label">Last Name</label>
+              <input
+                type="text"
+                name="lastName"
+                class="form-control"
+                value="{{user.lastName}}"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col">
+              <label class="form-label">Email</label>
+              <input
+                type="email"
+                name="email"
+                class="form-control"
+                value="{{user.email}}"
+                required
+              />
+            </div>
+            <div class="col">
+              <label class="form-label">Phone</label>
+              <input
+                type="text"
+                name="phone"
+                class="form-control"
+                value="{{user.phone}}"
+              />
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Birthdate</label>
+            <input
+              type="date"
+              name="birthdate"
+              class="form-control"
+              value="{{user.birthdate}}"
+            />
+          </div>
+
+          <hr/>
+
+          {{!-- SECTION: Account Details --}}
+          <h6 class="text-muted text-uppercase mb-3">Account Details</h6>
+
+          <div class="row mb-3">
+            <div class="col">
+              <label class="form-label">Username</label>
+              <input
+                type="text"
+                name="username"
+                class="form-control"
+                value="{{user.username}}"
+                readonly
+              />
+              <div class="form-text">Username cannot be changed.</div>
+            </div>
+            <div class="col">
+              <label class="form-label">Password</label>
+              <input
+                type="password"
+                name="password"
+                class="form-control"
+                placeholder="Leave blank to keep current password"
+              />
+            </div>
+          </div>
+
+          <hr/>
+
+          {{!-- SECTION: Shipping Address --}}
+          <h6 class="text-muted text-uppercase mb-3">Shipping Address</h6>
+
+          <div class="mb-3">
+            <label class="form-label">Street</label>
+            <input
+              type="text"
+              name="street"
+              class="form-control"
+              value="{{user.street}}"
+            />
+          </div>
+
+          <div class="row mb-3">
+            <div class="col">
+              <label class="form-label">City</label>
+              <input
+                type="text"
+                name="city"
+                class="form-control"
+                value="{{user.city}}"
+              />
+            </div>
+            <div class="col">
+              <label class="form-label">Province</label>
+              <input
+                type="text"
+                name="province"
+                class="form-control"
+                value="{{user.province}}"
+              />
+            </div>
+            <div class="col-3">
+              <label class="form-label">ZIP Code</label>
+              <input
+                type="text"
+                name="zip"
+                class="form-control"
+                value="{{user.zip}}"
+              />
+            </div>
+          </div>
+
+          <div class="d-grid mt-4">
+            <button type="submit" class="btn btn-primary btn-lg">Save Changes</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
